@@ -1,15 +1,7 @@
 const path = require('path');
-const dotenv = require('dotenv');
-dotenv.config({ path: './.env.deploy' });
-require('dotenv').config()
+require('dotenv').config(path.resolve(__dirname, '.env.deploy'));
 
-dotenv.config({
-  path: path.resolve(__dirname, '.env.deploy'),
-});
-
-const { DEPLOY_USER, DEPLOY_HOST, DEPLOY_REPOSITORY, DEPLOY_PATH, DEPLOY_REF, 
-  } =
-  process.env;
+const { DEPLOY_USER, DEPLOY_HOST, DEPLOY_REPOSITORY, DEPLOY_PATH, DEPLOY_REF } = process.env;
 
 module.exports = {
   apps: [
@@ -22,9 +14,8 @@ module.exports = {
       },
       instances: 1,
       autorestart: true,
-      restart_delay: 7000,
-      max_restarts: 30,
-      max_memory_restart: '612M',
+      restart_delay: 4000,
+      max_restarts: 30
     }
   ],
   deploy: {
