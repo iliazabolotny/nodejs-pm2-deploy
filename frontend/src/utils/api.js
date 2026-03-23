@@ -139,7 +139,7 @@ class Api {
   }
   }
  
-  const api = new Api('https://api.ilya.mesto.nomorepartiessite.ru/');
+  const api = new Api('https://api.mesto6284114202.nomorepartiessite.ru');
   
   export default api;
   
